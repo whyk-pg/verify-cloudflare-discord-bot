@@ -1,10 +1,14 @@
-# Learn Repo Template
+# Verify Discord Bot on Cloudflare
 
 ## 本リポジトリの目的
-練習用リポジトリを目的や達成目標を持って実施できるようにするため
+Cloudflare上でユーザーのコメントに応じて反応するDiscord Botを作成する
 
 ## 本リポジトリの達成目標
-このテンプレートリポジトリを使って練習用リポジトリを作成されるようになる
+- [ ] HonoでDiscord Botを構築
+- [ ] Discord Botを疎通
+- [ ] Cloudflare WorkersにDiscord Botをホスティング
 
 ## 参考資料
-- 特になし
+- [discord/cloudflare-sample-app: Example discord bot using Cloudflare Workers](https://github.com/discord/cloudflare-sample-app)
+- [Hono + Cloudflareでもくもく会用のDiscord Botを作ってみた](https://zenn.dev/ryo_kawamata/articles/hono-cloudflare-discord-app)
+- [Cloudflare Workers + HonoでDiscord botを作る際のポイント | Marginalia](https://blog.lacolaco.net/posts/discord-bot-cfworkers-hono/)
