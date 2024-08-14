@@ -5,7 +5,9 @@ Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作
 
 ## 本リポジトリの達成目標
 - [ ] HonoでDiscord Botを構築
-- [ ] Discord Botを疎通
+  - [ ] Commandsを登録できること
+  - [ ] Commandsを実行できること
+- [ ] ngrokでDiscord Botを疎通
 - [ ] Cloudflare WorkersにDiscord Botをホスティング
 
 ## 参考資料
