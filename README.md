@@ -10,6 +10,10 @@ Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作
 - [ ] ngrokでDiscord Botを疎通
 - [ ] Cloudflare WorkersにDiscord Botをホスティング
 
+### リアルタイムにメッセージを受け取って、その中からキーワードを抜き出して反応したい場合
+DiscordはGateway APIというものを提供しており、そのAPIとWebSocketでやり取りすることで、作られたメッセージをもとに反応することができる。  
+ただ、そうした場合リクエストで駆動するCloudflare Workersでは動作せず、Renderなど別サービスが必要になる。
+
 ## 参考資料
 - [discord/cloudflare-sample-app: Example discord bot using Cloudflare Workers](https://github.com/discord/cloudflare-sample-app)
 - [Discord Developer Portal — Documentation — Hosting on Cloudflare Workers](https://discord.com/developers/docs/tutorials/hosting-on-cloudflare-workers)
