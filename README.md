@@ -1,7 +1,7 @@
 # Verify Discord Bot on Cloudflare
 
 ## 本リポジトリの目的
-Cloudflare上でユーザーのコメントに応じて反応するDiscord Botを作成する
+Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作するDiscord Botを作成する
 
 ## 本リポジトリの達成目標
 - [ ] HonoでDiscord Botを構築
