@@ -4,10 +4,10 @@
 Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作するDiscord Botを作成する
 
 ## 本リポジトリの達成目標
-- [ ] HonoでDiscord Botを構築
-  - [ ] Commandsを登録できること
-  - [ ] Commandsを実行できること
-- [ ] ngrokでDiscord Botを疎通
+- [x] HonoでDiscord Botを構築
+  - [x] Commandsを登録できること
+  - [x] Commandsを実行できること
+- [x] ngrokでDiscord Botを疎通
 - [ ] Cloudflare WorkersにDiscord Botをホスティング
 
 ### リアルタイムにメッセージを受け取って、その中からキーワードを抜き出して反応したい場合
