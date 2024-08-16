@@ -1,4 +1,5 @@
 # Verify Discord Bot on Cloudflare
+![Status: Done](https://flat.badgen.net/static/Status/Done/green)
 
 ## 本リポジトリの目的
 Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作するDiscord Botを作成する
@@ -8,11 +9,23 @@ Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作
   - [x] Commandsを登録できること
   - [x] Commandsを実行できること
 - [x] ngrokでDiscord Botを疎通
-- [ ] Cloudflare WorkersにDiscord Botをホスティング
+- [x] Cloudflare WorkersにDiscord Botをホスティング
 
 ### リアルタイムにメッセージを受け取って、その中からキーワードを抜き出して反応したい場合
 DiscordはGateway APIというものを提供しており、そのAPIとWebSocketでやり取りすることで、作られたメッセージをもとに反応することができる。  
 ただ、そうした場合リクエストで駆動するCloudflare Workersでは動作せず、Renderなど別サービスが必要になる。
+
+### Cloudflare Workersで実行したい場合
+Discord Developer Portalとは少し違い、最初に`pnpm`をつけて以下のように実行する。
+
+```sh
+pnpm wrangler secret put DISCORD_TOKEN
+pnpm wrangler secret put DISCORD_PUBLIC_KEY
+pnpm wrangler secret put DISCORD_APPLICATION_ID
+pnpm wrangler secret put DISCORD_GUILD_ID
+```
+
+`wrangler.toml`で環境変数を管理していれば自動で入力されるようだが、`.dev.vars`で管理しているためコピペで登録する。
 
 ## 参考資料
 - [discord/cloudflare-sample-app: Example discord bot using Cloudflare Workers](https://github.com/discord/cloudflare-sample-app)
