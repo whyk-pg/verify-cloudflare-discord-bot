@@ -12,7 +12,7 @@ const BASE_URL = "https://discord.com/api/v10";
 /**
  * DiscordのREST APIでの一連の制御
  */
-export class DiscordApi {
+export class DiscordClient {
   private readonly token: string;
 
   constructor(token: string) {

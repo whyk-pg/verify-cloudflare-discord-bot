@@ -1,5 +1,5 @@
 import { commandsConfig, commandsName } from "../src/commands";
-import { DiscordApi } from "../src/discord/api";
+import { DiscordClient } from "../src/discord/api";
 
 const registerCommand = async (): Promise<void> => {
   const discordToken = process.env.DISCORD_TOKEN;
@@ -12,7 +12,7 @@ const registerCommand = async (): Promise<void> => {
   }
 
   console.log(`${commandsName.join("と")}のコマンドを登録しています`);
-  const discord = new DiscordApi(discordToken);
+  const discord = new DiscordClient(discordToken);
   await discord.overrideGuildApplicationCommands(
     applicationId,
     guildId,
