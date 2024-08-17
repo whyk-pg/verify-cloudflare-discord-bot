@@ -45,23 +45,6 @@ export class DiscordApi {
   }
 
   /**
-   * Discordにメッセージを送信する
-   * @param channelId Discord Application ID
-   * @param message 相手に送りたいメッセージ
-   * @returns Fetch APIのレスポンス
-   */
-  public async sendChannelMessage(
-    channelId: string,
-    message: RESTPostAPIChannelMessageJSONBody,
-  ) {
-    return this.request(
-      `${BASE_URL}/channels/${channelId}/messages`,
-      "POST",
-      message,
-    );
-  }
-
-  /**
    * Discord上のコマンド一括上書き
    * @see https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-guild-application-commands
    * @param applicationId Discord Application ID
