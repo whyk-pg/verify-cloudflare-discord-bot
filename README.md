@@ -8,6 +8,7 @@ Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作
 - [x] HonoでDiscord Botを構築
   - [x] Commandsを登録できること
   - [x] Commandsを実行できること
+  - [x] Modalの入力情報をオウム返しできること
 - [x] ngrokでDiscord Botを疎通
 - [x] Cloudflare WorkersにDiscord Botをホスティング
 
