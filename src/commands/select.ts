@@ -1,4 +1,4 @@
-import { ComponentType, InteractionResponseType } from "discord-api-types/v10";
+import { type APIMessageComponentSelectMenuInteraction, ComponentType, InteractionResponseType } from "discord-api-types/v10";
 import type { DiscordCommand, DiscordComponentCallback } from "./types";
 
 const SELECT_CUSTOM_ID = "select";
@@ -47,12 +47,13 @@ export const selectComponentCallback = {
     customId: SELECT_CUSTOM_ID,
   },
   createResponse(interaction) {
+    // StringSelectであることは明白なため、専用の型定義で型キャストしている
+    const typeSquashedInteraction = interaction as APIMessageComponentSelectMenuInteraction
+
     return {
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
-        // @ts-ignore
-        // FIXME: APIMessageComponentSelectMenuInteractionでinteractionが返ってくる方法を探す
-        content: interaction.data.values[0],
+        content: typeSquashedInteraction.data.values[0],
       },
     };
   },

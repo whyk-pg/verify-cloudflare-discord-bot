@@ -14,7 +14,8 @@ Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作
   - [x] MessageComponentの入力情報をオウム返しできること
 - [x] ngrokでDiscord Botを疎通
 - [x] Cloudflare WorkersにDiscord Botをホスティング
-- [ ] MessageComponentのinteractionで発生した型定義エラーが解決していること
+- [x] MessageComponentのinteractionで発生した型定義エラーが解決していること
+  - 今のところ型キャストしか思いつかないが、もっと良い方法があるはず
 
 ### リアルタイムにメッセージを受け取って、その中からキーワードを抜き出して反応したい場合
 DiscordはGateway APIというものを提供しており、そのAPIとWebSocketでやり取りすることで、作られたメッセージをもとに反応することができる。  
