@@ -1,5 +1,7 @@
 # Verify Discord Bot on Cloudflare
-![Status: Done](https://flat.badgen.net/static/Status/Done/green)
+<!-- ![Status: ToDo](https://flat.badgen.net/static/Status/ToDo/red) -->
+![Status: In Progress](https://flat.badgen.net/static/Status/In%20Progress/yellow)
+<!-- ![Status: Done](https://flat.badgen.net/static/Status/Done/green) -->
 
 ## 本リポジトリの目的
 Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作するDiscord Botを作成する
@@ -9,8 +11,10 @@ Cloudflare上でユーザーの~~コメント~~コマンドに反応して動作
   - [x] Commandsを登録できること
   - [x] Commandsを実行できること
   - [x] Modalの入力情報をオウム返しできること
+  - [x] MessageComponentの入力情報をオウム返しできること
 - [x] ngrokでDiscord Botを疎通
 - [x] Cloudflare WorkersにDiscord Botをホスティング
+- [ ] MessageComponentのinteractionで発生した型定義エラーが解決していること
 
 ### リアルタイムにメッセージを受け取って、その中からキーワードを抜き出して反応したい場合
 DiscordはGateway APIというものを提供しており、そのAPIとWebSocketでやり取りすることで、作られたメッセージをもとに反応することができる。  
