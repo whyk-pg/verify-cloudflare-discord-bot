@@ -3,6 +3,7 @@ import type {
   APIInteractionResponse,
   APIMessageComponentInteraction,
   APIModalSubmitInteraction,
+  APISelectMenuOption,
   RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from "discord-api-types/v10";
 
@@ -29,4 +30,8 @@ export interface DiscordComponentCallback {
   createResponse: (
     interaction: APIMessageComponentInteraction,
   ) => APIInteractionResponse;
+}
+
+export interface QuestionAndAnswer extends APISelectMenuOption {
+  answer: string;
 }
