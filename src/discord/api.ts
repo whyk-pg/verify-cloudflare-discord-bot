@@ -1,7 +1,4 @@
-import type {
-  RESTPostAPIChannelMessageJSONBody,
-  RESTPutAPIApplicationGuildCommandsJSONBody,
-} from "discord-api-types/v10";
+import type { RESTPutAPIApplicationGuildCommandsJSONBody } from "discord-api-types/v10";
 
 /**
  * DiscordのAPI URL
