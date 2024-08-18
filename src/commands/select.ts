@@ -24,6 +24,12 @@ const QUSTION_AND_ANSWER = [
     description: "好きなお茶を知りたい？",
     answer: "さえみどり",
   },
+  {
+    label: "好きなアーティスト",
+    value: "好きなアーティスト",
+    description: "好きなアーティストを知りたい？",
+    answer: "花譜",
+  },
 ] satisfies QuestionAndAnswer[];
 const options = QUSTION_AND_ANSWER.map((item) => ({
   label: item.label,
