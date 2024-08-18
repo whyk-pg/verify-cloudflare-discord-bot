@@ -1,6 +1,7 @@
 import type {
   APIApplicationCommandInteraction,
   APIInteractionResponse,
+  APIMessageComponentInteraction,
   APIModalSubmitInteraction,
   RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from "discord-api-types/v10";
@@ -18,5 +19,14 @@ export interface DiscordSubmitCallback {
   };
   createResponse: (
     interaction: APIModalSubmitInteraction,
+  ) => APIInteractionResponse;
+}
+
+export interface DiscordComponentCallback {
+  config: {
+    customId: string;
+  };
+  createResponse: (
+    interaction: APIMessageComponentInteraction,
   ) => APIInteractionResponse;
 }

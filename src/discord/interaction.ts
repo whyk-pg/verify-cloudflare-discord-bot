@@ -2,11 +2,16 @@ import {
   type APIApplicationCommandInteraction,
   type APIInteraction,
   type APIInteractionResponse,
+  type APIMessageComponentInteraction,
   type APIModalSubmitInteraction,
   InteractionResponseType,
   InteractionType,
 } from "discord-api-types/v10";
-import { getCallbackByCustomId, getCommandByName } from "../commands";
+import {
+  getCommandByName,
+  getComponentCallbackByCustomId,
+  getModalCallbackByCustomId,
+} from "../commands";
 
 async function handleCommandInteraction(
   interaction: APIApplicationCommandInteraction,
@@ -23,7 +28,18 @@ const handleModalSubmitInteraction = async (
   interaction: APIModalSubmitInteraction,
 ): Promise<APIInteractionResponse | null> => {
   const customId = interaction.data.custom_id;
-  const callback = getCallbackByCustomId(customId);
+  const callback = getModalCallbackByCustomId(customId);
+  if (callback) {
+    return callback.createResponse(interaction);
+  }
+  return { type: InteractionResponseType.Pong };
+};
+
+const handleMessageComponentInteraction = async (
+  interaction: APIMessageComponentInteraction,
+): Promise<APIInteractionResponse | null> => {
+  const customId = interaction.data.custom_id;
+  const callback = getComponentCallbackByCustomId(customId);
   if (callback) {
     return callback.createResponse(interaction);
   }
@@ -40,6 +56,8 @@ export const handleInteractionRequest = async (
       return handleCommandInteraction(interaction);
     case InteractionType.ModalSubmit:
       return handleModalSubmitInteraction(interaction);
+    case InteractionType.MessageComponent:
+      return handleMessageComponentInteraction(interaction);
   }
   throw new Error("Unknown interaction");
 };
